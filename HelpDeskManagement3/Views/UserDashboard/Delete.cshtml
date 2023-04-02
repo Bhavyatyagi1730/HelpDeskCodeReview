@@ -1,0 +1,38 @@
+﻿@model Model.TicketTable
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_NavbarFooter.cshtml";
+}
+
+<link href="~/Content/Common/Delete.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    .Delete {
+        margin-top: 96px;
+        margin-bottom: 230px;
+    }
+    a{
+        text-decoration:none;
+        color:black;
+    }
+</style>
+
+<div class="Delete">
+    <div class="head"><h3>Are you sure you want to delete this?</h3></div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color dele " style="display:flex">
+            <div class="btn-group pt-3 m-3">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+            <div class="btn-group pt-3 m-3">
+                @Html.ActionLink("Cancel", "ViewTicket", "", new { @class = "btn btn-secondary" })
+            </div>
+        </div>
+    }
+</div>

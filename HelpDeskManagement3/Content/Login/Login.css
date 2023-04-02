@@ -1,0 +1,131 @@
+﻿.heading > h1 {
+    color: #2F363F;
+    font-size: 40px;
+    /* font-weight: 300; */
+    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 2%;
+    /* letter-spacing: 20px; */
+}
+
+.heading > p {
+    color: #2F363F;
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    line-height: 20px;
+    /* margin-top: 2%; */
+}
+
+.loginenter input[type="text"]:hover {
+    background-color: white;
+    border: 2px solid #1E8AD2;
+    color: black;
+}
+
+.loginenter input[type="Password"]:hover {
+    background-color: white;
+    border: 2px solid #1E8AD2;
+    color: black;
+}
+
+.emailstyle {
+    border: 2px solid red;
+}
+
+.login {
+    display: flex;
+    height: 500px;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-top: 3.5%;
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(104, 92, 92, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.imgi > img {
+    /* border: 2px solid orange; */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img > p {
+    letter-spacing: normal;
+    /* line-height: 58px; */
+    color: #2F363F;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.loginenter {
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(104, 92, 92, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .loginenter > h5 {
+        font-size: 30px;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 3%;
+        font-family: "Robot", sans-serif;
+    }
+
+.formData {
+    /* border: 1px solid black; */
+    height: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.loginenter > .formData > img {
+    border-radius: 50%;
+    width: 80px;
+    height: 90px;
+    object-fit: contain;
+    margin-left: 40%;
+}
+
+.loginenter > .formData input[type="text"]:focus {
+    color: #030E15;
+    border: 2px solid #1E8AD2;
+    cursor: pointer;
+}
+
+.submit {
+    width: 100px;
+    height: 40px;
+    margin-top: 2.5%;
+    margin-left: 42%;
+    background-color: #1E8AD2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
+    box-shadow: inset 0px 0px 0px 1px #1E8AD2;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 46px;
+}
+
+.submit:hover {
+    background-color: #fff;
+   color: #1E8AD2;
+   border: 2px solid #1E8AD2;
+}

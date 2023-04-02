@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "ShowAdminDashboard";
+   
+}
+
+
+
+
+<link href="~/Content/Dashboard/AdminDashboard.css" rel="stylesheet" />
+
+<script src="~/Content/Js/Graph.js"></script>
+
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+
+<div class="maindiv">
+    <div class="Helpdesk">
+        <img src="~/Image/UIdesign/Helpdesk.jpg" alt="image" />
+        <button class="loginbtn">
+            <a href="@Url.Action("ShowDashboard","Home")">Logout</a>
+        </button>
+    </div>
+    <div class="contentall">
+        <div class="sideoption">
+            <span>
+                @*<h3>@Html.ActionLink("Dashboard", "AdminFirstpage", "Adminuser", new { @class = "my-link" })</h3>*@
+                <h3>
+                    <a class="my-link" href="@Url.Action("ShowAdminDashboard","Dashboard")">Dashboard</a>
+                </h3>
+            </span>
+            <hr />
+
+            <span>
+                <h3>
+                    <a class="my-link" href="@Url.Action("ShowTicket","Ticket")">Ticket</a>
+                </h3>
+            </span>
+            <hr />
+
+        </div>
+        <div class="maindata">
+            <div class="ticketsdata">
+                <div class="card1">
+                    <div class="col">
+
+                        <p>@Html.ActionLink("Create", "CreateNewUser", "Dashboard", new { @class = "my-link" })</p>
+                        @*<a href="Create/Adminuser" class="my-link">Create</a>*@
+                    </div>
+                    <div class="imgi">
+                        <img src="~/Image/CardsImage/createuser.png"
+                             alt="image" />
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="col">
+                        <p>@Html.ActionLink("ViewUser", "ShowUser", "UserDashboard", new { @class = "my-link" })</p>
+                    </div>
+                    <div class="imgii">
+                        <img src="~/Image/CardsImage/showuser.png"
+                             alt="image" />
+                    </div>
+
+                </div>
+                <div class="card3">
+                    <div class="col">
+
+                        <p>AssignUser</p>
+                    </div>
+                    <div class="imgii">
+                        <img src="~/Image/CardsImage/Assignuser.png"
+                             alt="image" />
+                    </div>
+                </div>
+
+            </div>
+
+            <h1 class="heading">
+                Tickets Completion Rate
+                <div class="line"></div>
+            </h1>
+            <div class="wrapper">
+                <div class="graph-container">
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+   
+    <footer>
+        <h5>HelpDesk</h5>
+
+        <div class="credex">
+            <p> 2023 Credex Technology. All Rights Reserved</p>
+            <div class="phon">
+                <img src="~/Image/UIdesign/phone.jpg" />
+                <p>+1-408-703-6930</p>
+            </div>
+            <div class="ema">
+                <img src="~/Image/UIdesign/email.png" />
+                <p>info@credextechnology.com</p>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+
+    </div>
+</body>
+
+
+
+
+
+

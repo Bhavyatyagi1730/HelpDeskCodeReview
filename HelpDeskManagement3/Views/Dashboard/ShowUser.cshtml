@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Model.HelpDesk>
+
+@{
+    ViewBag.Title = "ShowUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Common/Table.css" rel="stylesheet" />
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roletype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Dep_ID)
+             </th>
+
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roletype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    @if (item.Dep_ID == 1)
+                    {
+                        <p>JAVA</p>
+                    }
+
+                    else if (item.Dep_ID == 2)
+                    {
+                        <p>PYTHON</p>
+                    }
+                    else if (item.Dep_ID == 3)
+                    {
+                        <p>ASP.NET</p>
+                    }
+                    else if (item.Dep_ID == 4)
+                    {
+                        <p>OS</p>
+                    }
+                    else if (item.Dep_ID == 5)
+                    {
+                        <p>AI</p>
+                    }
+                    else if (item.Dep_ID == 6)
+                    {
+                        <p>Manager</p>
+                    }
+                    else if (item.Dep_ID == 7)
+                    {
+                        <p>CEO</p>
+                    }
+                    else if (item.Dep_ID == 8)
+                    {
+                        <p>Boss</p>
+                    }
+
+                </td>
+
+
+                <td class="designedit">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.User_Id }, new { id = "tiid" })
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.User_Id }, new { id = "deletebutton" })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+</div>

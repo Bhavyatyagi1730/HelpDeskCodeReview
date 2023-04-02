@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "ShowDashboard";
+}
+<link href="~/Content/HomeCSS/Home.css" rel="stylesheet" />
+<style>
+    a{
+        text-decoration:none;
+        color:#fff;
+    }
+</style>
+<body>
+    <div class="Fullbody">
+        <nav class="navbar">
+            <img src="~/Image/UIdesign/Helpdesk.jpg" alt="image" />
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#service">Our Services</a>
+                </li>
+            </ul>
+            @*  <button class="loginbtn">@Html.ActionLink("Login", "ShowLoginByCredential", "Login")</button>*@
+             <button class="loginbtn">
+                 <a href="@Url.Action("ShowLoginByCredential","Login")">Login</a>
+             </button>
+
+
+        </nav>
+        <div class="image">
+            <div id="home" class="bottom-left">
+                <h2>HelpDesk <strong>A Support System</strong></h2>
+                <h6>-- The Most Helpful Web Search -- </h6>
+                @*<input type="text" placeholder="Search Something.." />*@
+            </div>
+        </div>
+        <section id="about">
+            <div class="ab">
+                <h2>
+                    About
+                </h2>
+                </hr>
+                <div class="abouthelp">
+                    <p>
+                        Helpdesks offer features to provide context and insight into customer experiences. They also offer features that allow you to benchmark the performance of your support team,  ensuring that your team is truly efficient in assisting and delighting customers. Helpdesk tools are one of the most integral tools for successfully supporting a customer base and delivering effortless customer service.
+                        We’ve put together some information to help you learn about what a help desk can do for you and your team, its essential features, and how to pick one for yourself.
+                    </p>
+                    <img src="~/Image/UIdesign/Aboutimage.png" alt="image" />
+                </div>
+            </div>
+        </section>
+        <div id="service" class="ser">
+            <h2>Our Services</h2>
+            <h3>Browse Help Topics</h3>
+            <div class="supporthandle">
+                <div class="support">
+                    <div class="s1">
+                        <img src="~/Image/UIdesign/S1.png" alt="image" />
+                        <h4>Provide Support across channels </h4>
+                    </div>
+                    <div class="line"></div>
+                    <p>Solve customer support tickets via web, email, phone, SMS, and social media— all in one place.</p>
+                </div>
+                <div class="support">
+                    <div class="s2">
+                        <img src="~/Image/UIdesign/s2.png" alt="image" />
+                        <h4>Save times and lower costs </h4>
+                    </div>
+                    <div class="line"></div>
+                    <p>Quick and easy setup allows you to grow effectively over time..</p>
+                </div>
+                <div class="support">
+                    <div class="s3">
+                        <img src="~/Image/UIdesign/s3.png" alt="image" />
+                        <h4>Boots Customer Satisfaction </h4>
+                    </div>
+                    <div class="line"></div>
+                    <p>Assist customers with online tickets by using better intel and less manual work.</p>
+                </div>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="~/Image/UIdesign/logo1.jpg" alt="image" />
+            <img src="~/Image/UIdesign/logo2.jpg" alt="image" />
+            <img src="~/Image/UIdesign/logo3.jpg" alt="image" />
+            <img src="~/Image/UIdesign/logo4.jpg" alt="image" />
+        </div>
+    </div>
+    <footer>
+        <h5>HelpDesk</h5>
+        <p>HelpDesk Support System</p>
+        <div class="credex">
+            <p> $2023 Credex Technology. All Rights Reserved</p>
+            <div class="phon">
+                <img src="~/Image/UIdesign/phone.jpg" />
+                <p>+1-408-703-6930</p>
+            </div>
+            <div class="ema">
+                <img src="~/Image/UIdesign/email.png" />
+                <p>info@credextechnology.com</p>
+            </div>
+        </div>
+    </footer>
+</body>

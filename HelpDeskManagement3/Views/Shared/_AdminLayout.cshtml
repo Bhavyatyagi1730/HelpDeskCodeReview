@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Dashboard/AdminLayout.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="maindiv">
+        <div class="Helpdesk">
+            <img src="~/Image/UIdesign/Helpdesk.jpg" alt="image" />
+            <button class="loginbtn">
+                <a href="@Url.Action("ShowDashboard","Home")">Logout</a>
+            </button>
+        </div>
+        <div class="contentall">
+            <div class="sideoption">
+                <span><h3>
+                    @*@Html.ActionLink("Dashboard", "ShowAdminDashboard", "Dashboard", new { @class = "my-link" })*@
+                    <a class="my-link" href="@Url.Action("ShowAdminDashboard","Dashboard")">Dashboard</a>
+                    </h3></span>
+                <hr />
+
+                <div class="dropdownfile">
+                    <div class="dropbtn">
+                        @*<span><h3 style="margin-left:26%">@Html.ActionLink("Ticket", "ShowTicket", "Ticket", new { @class = "my-link" })</h3></span>*@
+                        <span>
+                            <h3>
+                                <a class="my-link" style="margin-left:26%" href="@Url.Action("ShowTicket","Ticket")">Ticket</a>
+                            </h3>
+                        </span>
+              
+                    </div>
+                
+                </div>
+                <hr />
+            </div>
+            <div class="m" style="width:80%; margin-left:2%; margin-top:3%">
+                @RenderBody()
+            </div>
+        </div>
+        <footer>
+            <h5>HelpDesk</h5>
+
+            <div class="credex">
+                <p> 2023 Credex Technology. All Rights Reserved</p>
+                <div class="phon">
+                    <img src="~/Image/UIdesign/phone.jpg" />
+                    <p>+1-408-703-6930</p>
+                </div>
+                <div class="ema">
+                    <img src="~/Image/UIdesign/email.png" />
+                    <p>info@credextechnology.com</p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+</html>

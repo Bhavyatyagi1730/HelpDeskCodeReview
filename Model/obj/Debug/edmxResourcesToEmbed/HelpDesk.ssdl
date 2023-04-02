@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDeskDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Dep_ID" />
+    </Key>
+    <Property Name="Dep_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dept_Desc" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HelpDesk">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Roletype" Type="varchar" MaxLength="200" />
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Dep_ID" Type="int" />
+    <Property Name="RoleTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="RoleType">
+    <Key>
+      <PropertyRef Name="RoleTypeID" />
+    </Key>
+    <Property Name="RoleType_Disc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HelpDeskDB.dbo.Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Status_Id" />
+      <PropertyRef Name="Status_Desc" />
+    </Key>
+    <Property Name="Status_Id" Type="int" Nullable="false" />
+    <Property Name="Status_Desc" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TicketTable">
+    <Key>
+      <PropertyRef Name="Ticket_Id" />
+    </Key>
+    <Property Name="Ticket_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Remarks" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Subject" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="Image_path" Type="varchar(max)" />
+    <Property Name="Dep_ID" Type="int" />
+  </EntityType>
+  <EntityContainer Name="HelpDeskDBModelStoreContainer">
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HelpDesk" EntityType="Self.HelpDesk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleType" EntityType="Self.RoleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TicketTable" EntityType="Self.TicketTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Status].[Status_Id] AS [Status_Id], 
+    [Status].[Status_Desc] AS [Status_Desc]
+    FROM [dbo].[Status] AS [Status]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

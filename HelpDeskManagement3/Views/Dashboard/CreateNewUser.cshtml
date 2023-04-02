@@ -1,0 +1,173 @@
+﻿@model Model.HelpDesk
+
+@{
+    ViewBag.Title = "CreateNewUser";
+    Layout = "~/Views/Shared/_NavbarFooter.cshtml";
+
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+
+    a{
+        text-decoration:none;
+        color:black;
+    }
+
+    h1 {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+        color: #080808;
+        -webkit-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+        h1 span {
+            display: block;
+            font-size: 0.5em;
+            line-height: 1.3;
+        }
+
+        h1 em {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+    .alt-two h1 {
+        text-align: center;
+    }
+
+        .alt-two h1:before {
+            left: 50%;
+            margin-left: -30px;
+        }
+
+    .two h1 {
+        text-transform: capitalize;
+    }
+
+        .two h1:before {
+            position: absolute;
+            left: 45%;
+            bottom: 0;
+            width: 200px;
+            height: 2px;
+            content: "";
+            background-color: #c50000;
+        }
+
+        .two h1 span {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 3em;
+            padding-left: 0.25em;
+            color: rgba(0, 0, 0, 0.4);
+            padding-bottom: 10px;
+        }
+</style>
+
+
+
+<div class="two alt-two mt-3">
+    <h1>
+       Create New User
+        <span>Add Some Member</span>
+    </h1>
+</div>
+
+
+<div class="container mt-1">
+    <div class="row mt-1">
+        <div class="col-md-8">
+            <div class="card ">
+                <div class="card-body">
+
+                    @using (Html.BeginForm("CreateNewUser", "Dashboard", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="form-group bg-grey">
+                        @*<h2 class="font-800  p-2 border">User Register</h2>*@
+                        <hr />
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group row p-2">
+                            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "col-md-3 col-form-label text-md-right" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row p-2">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-3 col-form-label text-md-right" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row p-2">
+                            @Html.LabelFor(model => model.RoleTypeID, htmlAttributes: new { @class = "col-md-3 col-form-label text-md-right" })
+                            <div class="col-md-9">
+                                <select class="form-control" name="RoleTypeID">
+                                    <option value="">select a roletype</option>
+                                    @foreach (var item in ViewBag.roledata)
+                                    {
+                                        <option value="@item.RoleTypeID">@item.RoleType_Disc</option>
+                                    }
+                                </select>
+                                @Html.ValidationMessageFor(model => model.RoleTypeID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row p-2">
+                            @Html.LabelFor(model => model.Dep_ID, htmlAttributes: new { @class = "col-md-3 col-form-label text-md-right" })
+                            <div class="col-md-9">
+                                <select class="form-control" name="Dep_ID">
+                                    <option value="">Select a Department</option>
+                                    @foreach (var item in ViewBag.departmentdata)
+                                    {
+                                        <option value="@item.Dep_ID">@item.Dept_Desc</option>
+
+                                    }
+                                </select>
+                                @Html.ValidationMessageFor(model => model.Dep_ID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row p-2">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-md-3 col-form-label text-md-right" })
+                            <div class="col-md-9">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row p-3">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-9">
+
+                                <input type="submit" value="Create" class="btn btn-primary" />
+                                @Html.ActionLink("Back ", "ShowAdminDashboard", null, new { @class = "btn btn-danger m-4" })
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Common/NavbarFooter.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="main">
+        <div class="nav">
+            <img src="~/Image/UIdesign/Helpdesk.jpg" alt="image">
+            <button class="logoutbtn">
+                <a href="@Url.Action("Logout","UserDashboard")">Logout</a>
+            </button>
+        </div>
+        <div class = "scrollable-div">
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+            <footer>
+                <h5>HelpDesk</h5>
+                <p>HelpDesk Support System</p>
+                <div class="credex">
+                    <p> 2023 Credex Technology. All Rights Reserved</p>
+                </div>
+                <div class="phon">
+                    <img src="~/Image/UIdesign/phone.jpg" />
+                    <p>+1-408-703-6930</p>
+                </div>
+                <div class="ema">
+                    <img src="~/Image/UIdesign/email.png" />
+                    <p>info@credextechnology.com</p>
+                </div>
+        </footer>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HelpDeskDBModelStoreContainer" CdmEntityContainer="HelpDeskDBEntities">
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Dep_ID" ColumnName="Dep_ID" />
+          <ScalarProperty Name="Dept_Desc" ColumnName="Dept_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HelpDesks">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.HelpDesk">
+        <MappingFragment StoreEntitySet="HelpDesk">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Roletype" ColumnName="Roletype" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dep_ID" ColumnName="Dep_ID" />
+          <ScalarProperty Name="RoleTypeID" ColumnName="RoleTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleTypes">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.RoleType">
+        <MappingFragment StoreEntitySet="RoleType">
+          <ScalarProperty Name="RoleType_Disc" ColumnName="RoleType_Disc" />
+          <ScalarProperty Name="RoleTypeID" ColumnName="RoleTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TicketTables">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.TicketTable">
+        <MappingFragment StoreEntitySet="TicketTable">
+          <ScalarProperty Name="Ticket_Id" ColumnName="Ticket_Id" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Image_path" ColumnName="Image_path" />
+          <ScalarProperty Name="Dep_ID" ColumnName="Dep_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="HelpDeskDBModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Status_Id" ColumnName="Status_Id" />
+          <ScalarProperty Name="Status_Desc" ColumnName="Status_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

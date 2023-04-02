@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Model.TicketTable>
+
+@{
+    ViewBag.Title = "ProgressTicket";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Ticket/ProgressTicket.css" rel="stylesheet" />
+<link href="~/Content/Dashboard/ShowTicket.css" rel="stylesheet" />
+<link href="~/Content/Common/Table.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<style>
+    a{
+        text-decoration:none;
+        color:black;
+    }
+</style>
+
+
+<div class="Ticketscards">
+    <div class="ticketcard1">
+        <h1>
+            <a href="@Url.Action("OpenTicket","Ticket")">Open Ticket</a>
+        </h1>
+    </div>
+    <div class="ticketcard1" style="background-color:darkolivegreen">
+        <h1>
+            <a href="@Url.Action("CloseTicket", "Ticket")">Close Ticket</a>
+        </h1>
+    </div>
+    <div class="ticketcard1" style="background-color:indianred">
+        <h1>
+            <a href="@Url.Action("ProgressTicket","Ticket" )">Progress Ticket</a>
+        </h1>
+    </div>
+</div>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-success text-center">No Progress Ticket Available</div>
+}
+else
+{
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Remarks)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateTime)
+                    </th>
+
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>*@
+                    <th></th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Remarks)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.Status)*@
+                            @if (item.Status == 0)
+                            {
+                                <p>Open</p>
+                            }
+                            else if (item.Status == 1)
+                            {
+                                <p>Progress</p>
+                            }
+                            else
+                            {
+                                <p>Close</p>
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateTime)
+                        </td>
+
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>*@
+                        <td>
+                        <td class="designedit">
+
+                            @Html.ActionLink("Edit", "AdminEditStatus", new { id = item.Ticket_Id }, new { id = "tiid" })
+
+                            @Html.ActionLink("Delete", "AdminDeleteTask", new { id = item.Ticket_Id }, new { id = "deletebutton" })
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+}
+
+

@@ -1,0 +1,33 @@
+﻿
+.Ticketscards {
+    display: flex;
+    margin-top: -3%;
+    width: 80%;
+    height: 20%;
+    margin-left: 10%;
+    justify-content: space-between
+}
+
+.ticketcard1 {
+    height: 80%;
+    width: 25%;
+    margin-top: 1%;
+    background-color: #1e8ad2;
+    border-radius: 5px;
+}
+
+    .ticketcard1 > h1 {
+        color: white;
+        text-align: center;
+        font-family: Robor, sans-serif;
+        font-weight: 200;
+        font-size: 26px;
+        margin-top: 15%;
+    }
+th{
+    background-color:skyblue;
+}
+a{
+    text-decoration:none;
+    color:black;
+}

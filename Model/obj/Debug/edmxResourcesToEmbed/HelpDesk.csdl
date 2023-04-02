@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDeskDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Dep_ID" />
+    </Key>
+    <Property Name="Dep_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dept_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HelpDesk">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Roletype" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_ID" Type="Int32" />
+    <Property Name="RoleTypeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RoleType">
+    <Key>
+      <PropertyRef Name="RoleTypeID" />
+    </Key>
+    <Property Name="RoleType_Disc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoleTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="TicketTable">
+    <Key>
+      <PropertyRef Name="Ticket_Id" />
+    </Key>
+    <Property Name="Ticket_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="User_Id" Type="Int32" Nullable="false" />
+    <Property Name="Image_path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Dep_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Status_Id" />
+      <PropertyRef Name="Status_Desc" />
+    </Key>
+    <Property Name="Status_Id" Type="Int32" Nullable="false" />
+    <Property Name="Status_Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HelpDeskDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="HelpDesks" EntityType="Self.HelpDesk" />
+    <EntitySet Name="RoleTypes" EntityType="Self.RoleType" />
+    <EntitySet Name="TicketTables" EntityType="Self.TicketTable" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,172 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.main {
+    height: 100vh;
+    width: 100%;
+    /* display: flex;
+  justify-content: space-between; */
+}
+
+.nav {
+    height: 70px;
+    display: flex;
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+    .nav > img {
+        width: 200px;
+        height: 70px;
+        object-fit: cover;
+        margin-left: 5%;
+    }
+
+.logoutbtn {
+    width: 80px;
+    height: 40px;
+    margin-left: 65%;
+    margin-top: 1%;
+    background-color: #1e8ad2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-family: "Roboto", sans-serif;
+    box-shadow: inset 0px 0px 0px 1px #1e8ad2;
+    cursor: pointer;
+}
+
+.scrollable-div {
+    height: 700px; 
+    overflow-y: scroll; 
+}
+
+
+.footer {
+   margin-top:10px;
+}
+
+footer {
+    height: 100px;
+    display: flex;
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(104, 92, 92, 0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+    footer > h5 {
+        font-size: 25px;
+        letter-spacing: 0;
+        line-height: 20px;
+        margin-top: 3%;
+        margin-left: 3%;
+        font-family: Roboto, sans-serif;
+        font-weight: 300;
+    }
+
+    footer > p {
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 20px;
+        margin-top: 3%;
+        margin-left: 5%;
+        font-family: Roboto, sans-serif;
+        font-weight: 300;
+        color: #657385;
+    }
+
+.credex {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 0.7%;
+    margin-left: 3%;
+}
+
+    .credex > p {
+        margin-top: 4%;
+    }
+
+.phon {
+    display: flex;
+    width: 280px;
+    margin-left: -35%;
+    margin-top: 3%;
+}
+
+    .phon > img {
+        width: 30px;
+        height: 20px;
+    }
+
+.ema {
+    display: flex;
+    margin-top: 3%;
+}
+
+    .ema > img {
+        width: 30px;
+        height: 20px;
+    }
+/* -------------Create Ticket Css-------------- */
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
+
+/* ------------- */
+/* GLOBAL STYLES */
+/* ------------- */
+
+
+
+.container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.brand {
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+    .brand span {
+        color: #ffffff;
+    }
+
+.contact form button,
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 1em;
+    border: solid 1px #627EDC;
+    border-radius: 4px;
+}
+
+
+.contact form button {
+    background: #627EDC;
+    border: 0;
+    color: #e4e4e4;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 
+
+-----------  Create Form TIcket ------------ */

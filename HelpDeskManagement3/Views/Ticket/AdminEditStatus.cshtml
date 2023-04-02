@@ -1,0 +1,182 @@
+﻿@model Model.TicketTable
+
+@{
+    ViewBag.Title = "AdminEditStatus";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*<a href="~/Views/Shared/_AdminLayout.cshtml">~/Views/Shared/_AdminLayout.cshtml</a>*@
+@*<link href="~/Content/Dashboard/CreateForm.css" rel="stylesheet" />
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-
+    ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">*@
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .two h1 {
+        text-transform: capitalize;
+    }
+
+        .two h1:before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 2px;
+            content: "";
+            background-color: #c50000;
+        }
+
+        .two h1 span {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 3em;
+            padding-left: 0.25em;
+         /*   color: rgba(0, 0, 0, 0.4);*/
+         color:#1e8ad2;
+            padding-bottom: 10px;
+        }
+
+
+    h1 {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+        color: #080808;
+        -webkit-transition: all 0.4s ease 0s;
+        -o-transition: all 0.4s ease 0s;
+        transition: all 0.4s ease 0s;
+    }
+
+        h1 span {
+            display: block;
+            font-size: 0.5em;
+            line-height: 1.3;
+        }
+
+        h1 em {
+            font-style: normal;
+            font-weight: 600;
+        }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="container">
+    <div class="two">
+        <h1>
+            Edit Ticket
+            <span>Hello Admin, How are You !</span>
+        </h1>
+    </div>
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Ticket_Id)
+
+    <div class="form-group row mt-4" style="display:none">
+        @Html.LabelFor(model => model.CreatedBy, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.CreatedBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CreatedBy, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row p-2 mt-3">
+        @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row p-2 ">
+        @Html.LabelFor(model => model.Subject, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row p-2 ">
+        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "col-sm-2 col-form-label text-md-right" })
+        <div class="col-md-9">
+            <select class="form-control" name="Status">
+                <option value="">Update the Status</option>
+                @foreach (var item in ViewBag.Status)
+                {
+                    <option value="@item.Status_Id">@item.Status_Desc</option>
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group row p-2">
+        @Html.LabelFor(model => model.Dep_ID, htmlAttributes: new { @class = "col-sm-2 col-form-label text-md-right" })
+        <div class="col-md-9">
+            <select class="form-control" name="Dep_ID">
+           
+                @foreach (var item in ViewBag.Department)
+                {
+                    <option value="@item.Dep_ID">@item.Dept_Desc</option>
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.Dep_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row" style="display:none">
+        @Html.LabelFor(model => model.DateTime, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.DateTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DateTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row" style="display:none">
+        @Html.LabelFor(model => model.User_Id, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(model => model.User_Id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.User_Id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row p-2">
+        @Html.LabelFor(model => model.Image_path, htmlAttributes: new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            <input type="file" name="Image_path" class="form-control" />
+            @Html.ValidationMessageFor(model => model.Image_path, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group button p-4 mt-3">
+        <div class="col-md-offset-2 col-md-10 bttn text-center" style="width:80%;">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a class="btn btn-danger" href="@Url.Action("ShowTicket", "Ticket")" style="text-decoration: none; margin-left: 6px; color: white">Cancel</a>
+        </div>
+        @*<div class="col-md-offset-2 col-md-10 bttn text-center">
+            <a class="btn btn-danger" href="@Url.Action("AdminEditStatus", "Ticket")" style="text-decoration: none; margin-left: 6px; color: white">Cancel</a>
+
+        </div>*@
+    </div>
+</div>
+}

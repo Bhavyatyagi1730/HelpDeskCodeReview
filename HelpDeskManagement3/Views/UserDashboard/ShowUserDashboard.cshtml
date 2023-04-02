@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ShowUserDashboard";
+}
+
+<link href="~/Content/UserDashboard/UserDashboard.css" rel="stylesheet" />
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <img src="~/Image/UIdesign/Helpdesk.jpg" alt="image">
+            <button class="logoutbtn">@Html.ActionLink("Logout","Logout","UserDashboard")</button>
+        </div>
+        <div>
+
+        </div>
+        <div class="mid_content">
+            <div class="btn-class">
+                <a href="@Url.Action("CreateUserTicket","UserDashboard")">
+                    <button class="TicketButton">Create Ticket</button>
+                </a>
+                <a href="@Url.Action("ViewTicket","UserDashboard")">
+                    <button class="TicketButton">View Ticket</button>
+                </a>
+            </div>
+            <div class="mainc">
+                <div class="image">
+                    <img src="~/Image/UIdesign/logo1.jpg" alt="image">
+                    <img src="~/Image/UIdesign/logo2.jpg" alt="image">
+                    <img src="~/Image/UIdesign/logo3.jpg" alt="image">
+                    <img src="~/Image/UIdesign/logo4.jpg" alt="image">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h5>HelpDesk</h5>
+            <p>HelpDesk Support System</p>
+            <div class="credex">
+                <p>2023 Credex Technology. All Rights Reserved</p>
+            </div>
+            <div class="phon">
+                <img src="~/Image/UIdesign/phone.jpg" />
+                <p>+1-408-703-6930</p>
+            </div>
+            <div class="ema">
+                <img src="~/Image/UIdesign/email.png" />
+                <p>info@credextechnology.com</p>
+            </div>
+        </footer>
+    </div>
+
+    </div>
+</body>

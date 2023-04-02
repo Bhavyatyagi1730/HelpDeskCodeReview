@@ -1,0 +1,160 @@
+﻿@model IEnumerable<Model.TicketTable>
+
+@{
+    ViewBag.Title = "ViewDashboard";
+    Layout = "~/Views/Shared/_NavbarFooter.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Common/Table.css" rel="stylesheet" />
+<div id="notification-container"></div>
+
+<style>
+    
+    a{
+        text-decoration:none;
+        color:black;
+    }
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success text-center">@TempData["Message"]</div>
+}
+
+
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <tr>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Ticket_Id)
+        </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dep_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image_path)
+            </th>
+
+            <th>Action</th>
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remarks)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject)
+                </td>
+                <td>
+                    @if (item.Status == 0)
+                    {
+                        <p>Open</p>
+                    }
+                    else if (item.Status == 1)
+                    {
+                        <p>Progress</p>
+                    }
+                    else
+                    {
+                        <p>Close</p>
+
+                    }
+                </td>
+
+                <td>
+                    @if (item.Dep_ID == 1)
+                    {
+                        <p>JAVA</p>
+                    }
+                    else if (item.Dep_ID == 0)
+                {
+                    <p>Admin</p>
+                }
+
+                    else if (item.Dep_ID == 2)
+                    {
+                        <p>PYTHON</p>
+                    }
+                    else if (item.Dep_ID == 3)
+                    {
+                        <p>ASP.NET</p>
+                    }
+                    else if (item.Dep_ID == 4)
+                    {
+                        <p>OS</p>
+                    }
+                    else if (item.Dep_ID == 5)
+                    {
+                        <p>AI</p>
+                    }
+                    else if (item.Dep_ID == 6)
+                    {
+                        <p>Manager</p>
+                    }
+                    else if (item.Dep_ID == 7)
+                    {
+                        <p>CEO</p>
+                    }
+                    else if (item.Dep_ID == 8)
+                    {
+                        <p>Boss</p>
+                    }
+
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateTime)
+                </td>
+                @if (item.Image_path != null)
+                {
+                    <td>
+
+                        <img src="@Url.Content(item.Image_path)" height="80px" width="80px" />
+
+                    </td>
+                }
+                @*<td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>*@
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Ticket_Id }, new { id = "deletebutton" })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+</div>

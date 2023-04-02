@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Model.Department>
+
+@{
+    ViewBag.Title = "DepartmentView";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2>DepartmentView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddDepartment")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dept_Desc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dept_Desc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Dep_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Dep_ID })
+        </td>
+    </tr>
+}
+
+</table>

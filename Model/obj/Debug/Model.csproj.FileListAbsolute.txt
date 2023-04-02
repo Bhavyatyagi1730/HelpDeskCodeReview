@@ -1,0 +1,12 @@
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\Model.dll.config
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\Model.dll
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\Model.pdb
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\EntityFramework.dll
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\EntityFramework.xml
+D:\HelpDeskCode\HelpDeskManagement3\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\HelpDeskCode\HelpDeskManagement3\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+D:\HelpDeskCode\HelpDeskManagement3\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\HelpDeskCode\HelpDeskManagement3\Model\obj\Debug\Model.csproj.CopyComplete
+D:\HelpDeskCode\HelpDeskManagement3\Model\obj\Debug\Model.dll
+D:\HelpDeskCode\HelpDeskManagement3\Model\obj\Debug\Model.pdb

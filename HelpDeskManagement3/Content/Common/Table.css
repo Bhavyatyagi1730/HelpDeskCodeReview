@@ -1,0 +1,116 @@
+﻿
+table {
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th, tr {
+    border: 1px solid black;
+   
+}
+th {
+    background-color: lightblue;
+}
+
+
+/* Table Styles */
+
+.table-wrapper {
+    margin: 10px 70px 70px;
+}
+
+.headingc {
+    margin-top: 2%;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Robot", sans-serif;
+}
+
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+    .fl-table td,
+    .fl-table th {
+        text-align: center;
+        padding: 8px;
+    }
+
+    .fl-table td {
+        border-right: 1px solid #e3bbbb;
+        font-size: 12px;
+    }
+
+    .fl-table thead th {
+        font-size: 16px;
+        font-weight: 300;
+        font-family: "Robot", sans-serif;
+        color: black;
+        background: white;
+    }
+
+        .fl-table thead th:nth-child(odd) {
+            color: black;
+            background: #1e8ad2;
+        }
+
+    .fl-table tr:nth-child(even) {
+        background: #d2d4d6;
+    }
+
+.designedit {
+    margin: 0;
+    padding: 20px;
+}
+
+#deletebutton {
+    background-color: red;
+    height: 20px;
+    width: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "roboto", sans-serif;
+    border: none;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+#tiid {
+    background-color: #1e8ad2;
+    height: 20px;
+    width: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 15px;
+    font-size: 16px;
+    margin-right: 16px;
+    margin-left: 10px;
+    font-weight: 300;
+    font-family: "roboto", sans-serif;
+    border: none;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.scrollable-div {
+    height: 770px;
+    overflow-y: scroll;
+}

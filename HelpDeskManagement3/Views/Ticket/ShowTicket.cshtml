@@ -1,0 +1,171 @@
+﻿@model IEnumerable<Model.TicketTable>
+@*@model Model.TicketTable*@
+
+
+@{
+    ViewBag.Title = "ShowTicket";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/Common/Table.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Ticket/ShowTicket.css" rel="stylesheet" />
+
+<div class="Ticketscards">
+    <div class="ticketcard1">
+        <h1>
+            <a href="@Url.Action("OpenTicket","Ticket")">Open Ticket</a>
+        </h1>
+    </div>
+    <div class="ticketcard1" style="background-color:darkolivegreen">
+        <h1>
+            <a href="@Url.Action("CloseTicket", "Ticket")">Close Ticket</a>
+        </h1>
+    </div>
+    <div class="ticketcard1" style="background-color:indianred">
+        <h1>
+            <a href="@Url.Action("ProgressTicket","Ticket" )">Progress Ticket</a>
+        </h1>
+    </div>
+
+</div>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success text-center">@ViewBag.Message</div>
+}
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-success text-center">@ViewBag.Message</div>
+
+}
+else
+{
+    <div class="table-wrapper scrollable-div">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Remarks)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dep_ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateTime)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image_path)
+                    </th>
+                    <th>Action</th>
+                    @*<th>Action</th>*@
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Remarks)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.Status)*@
+                            @if (item.Status == 0)
+                            {
+                                <p>Open</p>
+                            }
+                            else if (item.Status == 1)
+                            {
+                                <p>Progress</p>
+                            }
+                            else
+                            {
+                                <p>Close</p>
+                            }
+                        </td>
+
+                        <td>
+                            @if (item.Dep_ID == 1)
+                            {
+                                <p>JAVA</p>
+                            }
+
+                            else if (item.Dep_ID == 2)
+                            {
+                                <p>PYTHON</p>
+                            }
+                            else if (item.Dep_ID == 3)
+                            {
+                                <p>ASP.NET</p>
+                            }
+                            else if (item.Dep_ID == 4)
+                            {
+                                <p>OS</p>
+                            }
+                            else if (item.Dep_ID == 5)
+                            {
+                                <p>AI</p>
+                            }
+                            else if (item.Dep_ID == 6)
+                            {
+                                <p>Manager</p>
+                            }
+                            else if (item.Dep_ID == 7)
+                            {
+                                <p>CEO</p>
+                            }
+                            else if (item.Dep_ID == 8)
+                            {
+                                <p>Boss</p>
+                            }
+
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateTime)
+                        </td>
+
+                        @if (item.Image_path != null)
+                        {
+                            <td>
+
+                                <img src="@Url.Content(item.Image_path)" height="80px" , width="80px" />
+
+                            </td>
+                        }
+
+                        <td class="designedit">
+
+                            @Html.ActionLink("Edit", "AdminEditStatus", new { id = item.Ticket_Id }, new { id = "tiid" })
+
+                            @Html.ActionLink("Delete", "AdminDeleteTask", new { id = item.Ticket_Id }, new { id = "deletebutton" })
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+
+
+}
